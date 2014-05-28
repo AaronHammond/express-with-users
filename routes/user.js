@@ -42,7 +42,6 @@ exports.doRegister = function(req, res){
 			}
 
 			req.logIn(docuser, function(err){
-				console.log("logged in after registration");
 			    if(err){
 			        req.flash('error', 'Your account was created. Please log in.');
 			        return res.redirect('/user/login');
@@ -69,3 +68,12 @@ exports.viewLogin = function(req, res){
         failureRedirect: '/user/login',
         failureFlash: true
     });
+
+ /*
+  * GET /user/logout
+  */
+
+  exports.doLogout = function(req, res){
+  	req.logout();
+  	res.redirect('/');
+  }

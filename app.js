@@ -1,7 +1,3 @@
-
-
-
-
 /**
  * Module dependencies.
  */
@@ -35,10 +31,8 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 
-// TODO: purge to use an env variable
 app.use(express.cookieParser('herpaderpaderp'));
 
-// passport shit
 app.use(express.session({ secret: 'herpaderpaderp', key: 'express.sid'}));
 app.use(flash());
 app.use(passport.initialize());
@@ -73,6 +67,8 @@ app.post('/user/login', user.doLogin);
 
 app.get('/user/register', user.viewRegister);
 app.post('/user/register', user.doRegister);
+
+app.get('/user/logout', user.doLogout);
 
 app.get('/user/dashboard', user.viewDashboard);
 

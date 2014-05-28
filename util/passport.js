@@ -20,12 +20,10 @@ passport.use(new LocalStrategy(
                 return done(err);
             }
             if(!user) {
-                console.log("Bad username");
                 return done(null, false, {message: 'Incorrect Username'});
             }
             return user.comparePassword(password, function(err, isMatch){
                 if(err || !isMatch){
-                    console.log("Bad pass");
                     return done(null, false, {message: 'Incorrect Password'});
                 }
                 return done(null, user);
