@@ -1,0 +1,13 @@
+extends layout
+block content
+	if(msg != "")
+			p
+				| #{msg}
+	| User Login
+	form(method="post", action="/user/login")
+		p
+			input(type="text", name="username", value="", placeholder="Username")
+		p
+			input(type="password", name="password", value="", placeholder="Password")
+		p
+			input(type="submit", name="submit", value="Login")

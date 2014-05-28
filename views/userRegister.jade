@@ -1,0 +1,11 @@
+extends layout
+block content
+	p #{msg}
+	| User Registration
+	form(method="post", action="/user/register")
+		p
+			input(type="text", name="username", value="", placeholder="Username")
+		p
+			input(type="password", name="password", value="", placeholder="Password")
+		p
+			input(type="submit", name="submit", value="Register")
